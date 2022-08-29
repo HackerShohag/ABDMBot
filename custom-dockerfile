@@ -11,8 +11,8 @@ RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
     curl -L https://github.com/ytubeupX/cautious-octo-potato/releases/download/v0.1.3/megasdkrest-amd64\
     -o /usr/local/bin/megasdkrest && chmod +x /usr/local/bin/megasdkrest
 
-COPY ./requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
+COPY ./requirements .
+RUN pip3 install --no-cache-dir -r requirements
 
 #adding ssh access to docker
 RUN apt update && apt install  openssh-server sudo -y
