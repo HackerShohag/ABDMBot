@@ -1,2 +1,2 @@
-FROM ghcr.io/hackershohag/botimage:latest AS builder
+FROM ghcr.io/hackershohag/botimage AS builder
 CMD ["bash", "start.sh"]
