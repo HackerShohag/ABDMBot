@@ -5,6 +5,9 @@ on:
 jobs:
   BuildBase:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v2
       - name: Set up QEMU
