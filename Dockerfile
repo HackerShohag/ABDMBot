@@ -1,3 +1,3 @@
 FROM ghcr.io/hackershohag/botimage:latest AS builder
-#RUN echo $GPH_PAT | docker login ghcr.io --username HackerShohag --password-stdin
+RUN docker login ghcr.io --username HackerShohag -p $GPH_PAT
 CMD ["bash", "start.sh"]
