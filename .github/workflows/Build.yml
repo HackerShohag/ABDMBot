@@ -15,8 +15,8 @@ jobs:
         uses: docker/login-action@v1 
         with:
           registry: ghcr.io
-          username: token
-          password: ${{ secrets.GHP_PAT }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.USER_PASS }}
       - name: Build and publish to Docker Hub
         uses: docker/build-push-action@v2.7.0
         with:
