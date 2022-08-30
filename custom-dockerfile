@@ -11,6 +11,10 @@ RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
     curl -L https://github.com/ytubeupX/cautious-octo-potato/releases/download/v0.1.3/megasdkrest-amd64\
     -o /usr/local/bin/megasdkrest && chmod +x /usr/local/bin/megasdkrest
 
+RUN mv /usr/bin/aria2c /usr/bin/mrbeast
+RUN mv /usr/bin/qbittorrent-nox /usr/bin/pewdiepie
+RUN mv /usr/bin/ffmpeg /usr/bin/mutahar
+
 COPY ./requirements .
 RUN pip3 install --no-cache-dir -r requirements
 
