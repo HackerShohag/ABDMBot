@@ -8,9 +8,6 @@ RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
     libssl-dev libc-ares-dev libsodium-dev libcrypto++-dev \
     libsqlite3-dev libfreeimage-dev libpq-dev libffi-dev \
     && locale-gen en_US.UTF-8 && \
-    mv /usr/bin/aria2c /usr/bin/mrbeast && \
-    mv /usr/bin/qbittorrent-nox /usr/bin/pewdiepie && \
-    mv /usr/bin/ffmpeg /usr/bin/mutahar && \
     curl -L https://github.com/ytubeupX/cautious-octo-potato/releases/download/v0.1.3/megasdkrest-amd64\
     -o /usr/local/bin/megasdkrest && chmod +x /usr/local/bin/megasdkrest
 
