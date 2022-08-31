@@ -754,7 +754,7 @@ def set_priority(hash_id):
 
 @app.route('/')
 def homepage():
-    return requests.get("http://www.facebook.com").text
+    return requests.get("http://www.google.com").text
 
 @app.errorhandler(NotFound404Error)
 def page_not_found(e):
