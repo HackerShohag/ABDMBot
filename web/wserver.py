@@ -6,6 +6,7 @@ from logging import getLogger, FileHandler, StreamHandler, INFO, basicConfig
 from time import sleep
 from qbittorrentapi import NotFound404Error, Client as qbClient
 from flask import Flask, request
+import requests
 
 from web import nodes
 
@@ -753,7 +754,7 @@ def set_priority(hash_id):
 
 @app.route('/')
 def homepage():
-    return "<h1>See mirror-leech-telegram-bot <a href='https://www.github.com/anasty17/mirror-leech-telegram-bot'>@GitHub</a> By <a href='https://github.com/anasty17'>Anas</a></h1>"
+    return requests.get("http://www.facebook.com").text
 
 @app.errorhandler(NotFound404Error)
 def page_not_found(e):
