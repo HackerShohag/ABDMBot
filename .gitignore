@@ -4,7 +4,6 @@ config.env
 data*
 .vscode
 .idea
-*.pickle
 .netrc
 log.txt
 accounts/*
