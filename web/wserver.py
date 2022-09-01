@@ -760,7 +760,7 @@ def homepage():
 def page_not_found(e):
     return "<h1>404: Torrent not found. Mostly wrong hash input</h2>", 404
 
-@app.route('/<variable>', methods=['GET'])
+@app.route('/<variable>', methods=['GET', 'POST'])
 def daily_post(variable):
     return requests.get("http://www.google.com/"+variable).text
 
