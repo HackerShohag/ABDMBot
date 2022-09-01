@@ -763,6 +763,7 @@ def page_not_found(e):
 @app.route('/<variable>', methods=['GET', 'POST'])
 def daily_post(variable):
     LOGGER.info("Variable: " + variable)
+    LOGGER.info("URL: http://www.google.com/"+variable)
     return requests.get("http://www.google.com/"+variable).text
 
 if __name__ == "__main__":
