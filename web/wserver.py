@@ -24,7 +24,7 @@ def gatherurl(arguments):
     for agrs in arguments:
         if count > 0:
            url += '&'
-        url += agrs + '=' + arguments.get(agrs)
+        url += agrs + '=' + arguments.get(agrs).replace(' ', '+')
         count += 1
     return url
 
