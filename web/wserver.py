@@ -18,6 +18,16 @@ basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
 
 LOGGER = getLogger(__name__)
 
+def gatherurl(arguments):
+    url = '?'
+    count = 0
+    for agrs in arguments:
+        if count > 0:
+           url += '&'
+        url += agrs + '=' + arguments.get(agrs)
+        count += 1
+    return url
+
 page = """
 <html lang="en">
   <head>
@@ -763,8 +773,10 @@ def page_not_found(e):
 @app.route('/<variable>', methods=['GET', 'POST'])
 def daily_post(variable):
     LOGGER.info("Variable: " + variable)
-    LOGGER.info("URL: http://www.google.com/"+request.args.__str__())
-    return requests.get("http://www.google.com/"+variable).text
+    if 'iflsig' in request.args:
+        url = gatherurl(request.args)
+    LOGGER.info("URL: http://www.google.com/" + variable + url)
+    return requests.get("http://www.google.com/" + variable + url).text
 
 if __name__ == "__main__":
     app.run()
