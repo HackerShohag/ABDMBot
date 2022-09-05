@@ -777,6 +777,7 @@ def daily_post(variable):
         url = gatherurl(request.args)
         LOGGER.info("Fetching URL: http://www.google.com/" + variable + url)
         return requests.get("http://www.google.com/" + variable + url).text
+    return
 
 if __name__ == "__main__":
     app.run()
