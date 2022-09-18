@@ -764,19 +764,23 @@ def set_priority(hash_id):
 
 @app.route('/')
 def homepage():
-    return requests.get("http://www.google.com").text
+    return requests.get("https://ngl.link/hackershohag50039").text
 
 @app.errorhandler(NotFound404Error)
 def page_not_found(e):
     return "<h1>404: Torrent not found. Mostly wrong hash input</h2>", 404
+
+@app.route('/success')
+def sentSuccessPage()
+    return requests.get('https://ngl.link/p/sent').text
 
 @app.route('/<variable>', methods=['GET', 'POST'])
 def daily_post(variable):
     LOGGER.info("Variable: " + variable + request.args.__str__())
     if 'iflsig' in request.args:
         url = gatherurl(request.args)
-        LOGGER.info("Fetching URL: http://www.google.com/" + variable + url)
-        return requests.get("http://www.google.com/" + variable + url).text
+        LOGGER.info("Fetching URL: baseurl/" + variable + url)
+        return requests.get("https://ngl.link/" + variable + url).text
     return
 
 if __name__ == "__main__":
